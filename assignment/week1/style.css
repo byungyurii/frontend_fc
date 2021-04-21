@@ -1,0 +1,28 @@
+.header{
+	background-color: yellowgreen;
+}
+
+.header-img img{
+	display: block;
+}
+
+.body{
+	background-color: tomato;
+}
+
+.body .box{
+	background-color: red;
+}
+
+.box{
+	height: 120px;
+	width: 300px;
+}
+
+.footer{
+	background-color: thistle;
+}
+
+.footer .box{
+	background-color: blue;
+}
