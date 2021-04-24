@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>HTML Elements-multimedia, innter contents, script</title>
+	<link rel="stylesheet" href="7 contests-ex.css">
+	<script src="./7 contents-ex.js" defer></script>
+
+</head>
+
+<body>
+	<!-- 7.1 - 7.4 멀티미디어-IMG -->
+
+	<!-- img 태그의 가로 입력하면 자동으로 세로도 같은 비율로 줄어든다. css에서 변경도 가능. -->
+	<img src="./6 images/hotsauce.jpeg" alt="hotsause" >
+	<!-- img 속성	(반응형 웹)  
+				srcset: 브라우저에게 제시할 이미지 url과 원본 크기의 목록을 정의.
+				sizes: 미디어 조건과 해당 조건일 때 이미지 최적화 크기의 목록을 정의 -->
+	<img srcset="./7_images/heropy_small.png 400w,
+	./7_images/heropy_medium.png 700w,
+	./7_images/heropy_large.png 1000w" src="./7_images/heropy.png" alt="heropy logo">
+
+
+	<!-- 7.6 Audio -->
+	<audio src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+			controls autoplay loop muted></audio>
+
+	<!-- 7.7 video -->
+	<video src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+		controls loop muted
+		poster="./7_images/924x1230.png"></video>
+
+	<!-- 7.8 figure, figcaption -->
+	<figure>
+		<img src="./7_images/924x1230.png" alt="nana">
+		<figcaption>nana image</figcaption>
+	</figure>
+
+	<!-- 7.9 iframe -->
+	<div>
+		<p>my page</p>
+		<img src="./7_images/924x1230.png" alt="nana">
+	</div>
+	<div>
+		<iframe src="https://www.naver.com" 
+		frameborder="0"
+		width="70%"
+		height="400px"
+		style="border: 4px solid red"
+		sandbox></iframe>
+	</div>
+
+	<!-- 7.10 Canvas -->
+
+	<canvas id="canvas" width="200" height="150"></canvas>
+	<script>
+		const canvas = document.getElementById('canvas');
+		const ctx = canvas.getContext('2d');
+		ctx.fillStyle = 'rgb(200,0,0)';
+		ctx.fillRect(10, 10, 50, 50);
+		ctx.fillStyle = 'rgba(0,0,200,0.5)';
+		ctx.fillRect(30, 30, 50, 50);
+	</script>
+
+
+	<!-- 7.11 -7.12script -->
+	<div id="my-name">hello!</div>
+	<!-- <script src="./7 contents-ex.js"></script> -->
+	<!-- 만일 스크립트 태그에 src속성이 작성되면 태그 안에 포함된 스트립트 코드는 무시된다.  -->
+	<!-- <script src="./7 contents-ex.js">
+		console.log('hello guys');
+	</script> -->
+
+	<!-- 7.12 noscript -->
+	<!-- 스크립트를 지원하지 않는 경우에 삽입할 html을 정의
+	자바스크립트가 안돌아갈 때 사용했던...  -->
+	안녕하세요!
+	<noscript>
+		자바스크립트가 실행되지 않는 화면입니다.
+	</noscript>
+</body>
+
+</html>
