@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Contents - Table & Format</title>
+	<link rel="stylesheet" href="./8 format-ex.css">
+</head>
+
+<body>
+	<!-- 7.1 table -->
+	<!-- 2x3 table 
+		table: 	표 영역을 설정해준다. 
+	th: 헤더부분
+	tr: 열 갯수
+	td : 셀 안에 들어갈 내용-->
+	<table>
+		<tr>
+			<th>타입</th>
+			<th>값</th>
+		</tr>
+		<tr>
+			<td>알파벳</td>
+			<td>A</td>
+		</tr>
+		<tr>
+			<td>숫자</td>
+			<td>1</td>
+		</tr>
+	</table>
+
+	<!-- 7.2 th -->
+	<!-- 머리글 칸을 지정한다.
+	속성:
+	abbr : 열에 대한 간단한 설명
+	headers: 관련된 하나 이상의 다른 머리글 칸. id 속성값
+	colspan: 병합하려는 열의 수. 기본값: 1
+	rowspan: 병합하려는 행의 수. 기본값: 1
+	scope: 자신이 누구의 머리글 칸인지 명시. 값: col(자신의 열) colgroup(모든 열) row(자신의 행) rowgroup(모든 행) auto. 기본값: auto 
+	=> 머리글이 일반적으로 1행에 있지만, 1열에 있는 경우에 직접 설정해주는 ...-->
+	<table>
+		<tr>
+			<th colspan="2" id="th-data">data</th>
+		</tr>
+		<tr>
+			<th abbr="Type" scope="col" headers="th-data">타입</th>
+			<th abbr="Value" scope="col" headers="th-data">값</th>
+		</tr>
+		<tr>
+			<td>알파벳</td>
+			<td>A</td>
+		</tr>
+		<tr>
+			<td>숫자</td>
+			<td>1</td>
+		</tr>
+	</table>
+	<!-- 수직 -> 수평 형태의 표를 만들겠다. -->
+	<table>
+		<tr>
+			<th rowspan="2" id="th-data-2">데이터</th>
+			<th headers="th-data-2">타입</th>
+			<td>알파벳</td>
+			<td>숫자</td>
+		</tr>
+		<tr>
+			<th headers="th-data-2">값</th>
+			<td>A</td>
+			<td>7</td>
+		</tr>
+	</table>
+
+	<!-- 8.3 td -->
+	<!-- 일반 칸, 즉 셀을 지정. 
+속성:
+header: 관련된 하나 이상의 다른 머리글(th) 칸의 id값
+colspan, rowspan -->
+	<table>
+		<tr>
+			<th rowspan="2" id="th-data-3">데이터</th>
+			<th headers="th-data-2" id="th-type-3">타입</th>
+			<td headers="th-type-3">알파벳</td>
+			<td headers="th-type-3">숫자</td>
+		</tr>
+		<tr>
+			<th headers="th-data-3" id="th-value-3">값</th>
+			<td headers="th-value-3">A</td>
+			<td headers="th-value-3">7</td>
+		</tr>
+	</table>
+
+	<!-- 8.4 caption -->
+	<!-- 표의 제목을 설정한다.
+- 열리는 테이블 태그 바로 다음에 작성한다
+- 한 테이블에 하나 -->
+	<table>
+		<caption>데이터 타입과 값</caption>
+		<tr>
+			<th rowspan="2" id="th-data-3">데이터</th>
+			<th headers="th-data-2" id="th-type-3">타입</th>
+			<td headers="th-type-3">알파벳</td>
+			<td headers="th-type-3">숫자</td>
+		</tr>
+		<tr>
+			<th headers="th-data-3" id="th-value-3">값</th>
+			<td headers="th-value-3">A</td>
+			<td headers="th-value-3">7</td>
+		</tr>
+	</table>
+
+	<!-- 8.5 colgroup, col -->
+	<!-- 표의 열들을 공통적으로 정의하는 column과 그의 집합(colgroup)
+속성 : span: 연속되는 열의 수 -->
+	<table>
+		<caption>데이터 타입과 값</caption>
+		<colgroup>
+			<col style="background-color: tomato;">
+			<col style="background-color: lightgray;" span="2">
+			<col>
+		</colgroup>
+		<tr>
+			<th></th>
+			<th>타입</th>
+			<th>값</th>
+		</tr>
+		<tr>
+			<th>1</th>
+			<td>알파벳</td>
+			<td>A</td>
+		</tr>
+		<tr>
+			<th>2</th>
+			<td>숫자</td>
+			<td>1</td>
+		</tr>
+	</table>
+
+	<!-- 8.6 thread, tbody, tfoot -->
+	<!-- 표의 머리글, 본문, 바닥글을 지정해준다. 테이블 레이아웃에 영향을 주지 않는다.  -->
+	<table>
+		<caption>Fruits</caption>
+		<colgroup>
+			<col span="2" style="background-color: yellowgreen;">
+			<col style="background-color: tomato;">
+		</colgroup>
+		<thead>
+			<!--머리글 부분-->
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- 본문 부분 -->
+			<tr>
+				<td>F123A</td>
+				<td>Apple</td>
+				<td>$22</td>
+			</tr>
+			<tr>
+				<td>F098B</td>
+				<td>Banana</td>
+				<td>$19</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<!-- 8.7 양식 Form -->
+	<form action="/login" method="GET">
+		<input type="email" name="email">
+		<input type="password" name="password">
+		<button type="submit">로그인</button>
+	</form>
+
+	<!-- 8.8 - 8.9 input -->
+	<input type="text" autofocus>
+
+	<!-- 외부에 input이 존재하는 경우에 form의 아이디값을 넣어줌으로써 form이 제출될 때 같이 제출 할 수 있도록 도운다. -->
+	<form action="/login" id="login-form"></form>
+	<input type="text" from="login-form">
+
+	<input type="text" maxlength="6">
+
+	<form action="/login" method="GETs">
+		<!-- http://127.0.0.1:5500/login?id=1234%40gmail.com&pw=1234 
+			input에 name속성이 있어야 제대로 받아올 수 있다. -->
+		<input type="email" name="id">
+		<input type="password" name="pw">
+		<!--type="button"이라고 해도 버튼은 생기지만, 이 경우 제출할 수 없기 때문에 submit으로 사용한다. -->
+		<input type="submit" value="로그인">
+	</form>
+
+	<!-- value= 초기값 
+		readonly = 말 그대로 읽을 수만 있게 한다. 포커스는 가능
+		disabled = 포커스조차 불가능. 값 변경 불가능
+		placeholder = 베이스로 깔아두는 힌트..같은거
+		max&min = 최대 최소값
+		step = 증가, 감소하는 폭
+		-->
+	<input type="number" placeholder="숫자를 입력하세요">
+	<input type="number" max="8" min="1" step="2">
+
+	<!-- checked = 미리 체크가 된 상태가 디폴트값 -->
+	<input type="checkbox" checked>
+
+	<!-- multitpe = 여러개의 파일을 선택할 수 있다. -->
+	<input type="file" multiple>
+
+	<!-- input 타입으로 만든 image는 제출 버튼으로 활용가능하다.  -->
+	<form action="/login">
+		<input type="image" src="7_images/heropy.png" alt="logo">
+	</form>
+
+	<!-- radio는 checkbox와 유사한 형태지만 한번 선택하면 해제되지 않는다. 
+		name을 이용해서 같은 radio 버튼 묶음으로 설정할 수 있다.
+		checked = 미리 선택된다. -->
+	<input type="radio" name="radio1">
+	<input type="radio" name="radio1" checked>
+	<input type="radio" name="radio1">
+
+	<form action="/login">
+		<input type="text" name="id">
+		<input type="password" name="pw">
+		<input type="submit" value="로그인">
+		<input type="reset" value="초기화">
+	</form>
+	<input type="text">
+
+	<!-- 8.10 label -->
+
+	<!-- 라벨 가능 요소를 참조 -->
+	<!-- for속성을 통해서 label이 제공하는 제목이 for속성의 값을 가져간다고 알 수 있다. 그러나, 매번 설정하기 힘들기 때문에 아래처럼 라벨 가능 요소를 포함하는 형식으로 작성한다.  -->
+	<input type="checkbox" id="user-agreement" />
+	<label for="user-agreement">동의하십니까?</label>
+
+	<!-- 라벨 가능 요소를 포함 -->
+	<label><input type="checkbox" />동의하십니까?</label>
+	<label>검색 <input type="search"></label>
+
+	<!-- 8.11 button -->
+	<!-- 같은 기능 -->
+	<input type="reset" value="초기환">
+	<button type="submit"> 초기화 </button>
+
+	<button onclick="doit()">클릭하세요!</button>
+	<script>
+		functin doit() {
+			alert('클릭했습니다');
+		}
+	</script>
+
+	<!-- 8.12 textarea -->
+	<textarea name="" id="" cols="30" rows="10"></textarea>
+
+	<!-- 8.13 fieldset, legend -->
+	<form>
+		<fieldset>
+			<legend>Coffee Size</legend>
+			<label>
+				<input type="radio" name="size" value="tall" />
+				Tall
+			</label>
+			<label>
+				<input type="radio" name="size" value="grande" />
+				Grande
+			</label>
+			<label>
+				<input type="radio" name="size" value="venti" />
+				Venti
+			</label>
+		</fieldset>
+	</form>
+
+	<!-- 8.14 select, datalist, optgroup, option -->
+	<select>
+		<optgroup label="Coffee">
+		  <option>Americano</option>
+		  <option>Caffe Mocha</option>
+		  <option label="Cappuccino" value="Cappuccino"></option>
+		</optgroup>
+		<optgroup label="Latte" disabled>
+		  <option>Caffe Latte</option>
+		  <option>Vanilla Latte</option>
+		</optgroup>
+		<optgroup label="Smoothie">
+		  <option>Plain</option>
+		  <option>Strawberry</option>
+		  <option>Banana</option>
+		  <option>Mango</option>
+		</optgroup>
+	  </select>
+
+	  <!-- 8.15 progess -->
+	  <progress value="70" max="100">70 %</progress>
+
+</body>
+
+</html>
