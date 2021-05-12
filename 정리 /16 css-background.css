@@ -1,0 +1,31 @@
+section{
+	height: 300px;
+	border: 2px dashed lightgreen;
+}
+
+.section2{
+	background-image: url("http://www.istarbucks.co.kr/common/img/main/fav_prod_bg_new.jpg");
+	background-size: auto 100%;
+	background-position: right bottom;
+	background-attachment: fixed;
+}
+
+.section3{
+	background-image: url("http://www.istarbucks.co.kr/common/img/main/reserve_bg.jpg");
+	background-size: auto 100%;
+	background-position: right bottom;
+	background-attachment: fixed;
+}
+
+.container{
+	width: 400px;
+	height: 300px;
+	border: 4px solid black;
+	margin: 50px;
+	background-image: url("http://www.istarbucks.co.kr/common/img/main/reserve_bg.jpg");
+	background-attachment: local;
+	/* container을 스크롤할때 백그라운드 이미지도 같이 스크롤된다. */
+}
+.for-scroll{
+	height: 2000px;
+}
