@@ -1,0 +1,89 @@
+/* 17.1 transition */
+.box{
+	width: 100px;
+	height: 100px;
+	background: tomato;
+	margin: 50px;
+	transition: all 1s;
+	/* = transition: 1s; */
+	/* transition: width 1s; <- 가로 속성은 자연스럽게 바뀌는데, 반면 백그라운드 색깔 속성은 확 바뀜.
+		transition: background 1s; <- 백그라운드 속성은 1초에 걸려서 바뀌는데 가로속성은 확확 바뀜.  */
+	/* transition: width 1s, background 1s; */
+	/* 	지금 바꾸는 것 : 가로사이즈와 백그라운드 색상. 1초에 걸려서 바꿀 것이다.
+	transition-property: width, background;
+	transition-duration: 1s; */
+}
+.box:hover{
+	width: 300px;
+	background: dodgerblue;
+}
+
+/* 17.3 변환 2D 속성 */
+.box-2D{
+	width: 100px;
+	height: 100px;
+	background: tomato;
+	margin: 100px;
+	display: flex;
+	justify-content: center;
+	font-size: 30px;
+	transition: 1s;
+	/* transform: translate(100px, 30px); 왼쪽으로 100px, 아래로 30px이동 */
+	/* 위는 position: relative; left: 100px; top:30px; 와 같다.
+		요소를 배치하고 끝나는 경우에는 position을 사용하는 것을 권장. 요소의 위치가 실시간으로 변경될 경우, transform을 이용한다. */
+	
+}
+.box:hover{
+	transform: rotate(90deg);
+	transform: translate(30px, 30px);
+	transform: scale(1.5);
+	transform: skew(45deg, -45deg);
+}
+/* 17.4 변환 3d 속성 */
+.img-3d{
+	width: 300px;
+	border: 1px solid lightgrey;
+	transition: 1s;
+	/* perspective는 항상 transform 가장 앞에 설정.  */
+	transform: perspective(500px) rotateX(45deg) ;
+}
+
+/* transform-origin */
+.img-transform{
+	width: 200px;
+	border: 1px solid lightgray;
+	transition: 1s;
+	transform: rotate(45deg);
+	/* transform-origin: 50% 50%; //기본값 */
+	transform-origin: 0% 0%;
+
+}
+/* transform-style */
+.perspective{
+	width: 200px;
+	/* 하위 요소를 관찰하는 원근거리. 작을 수록 원근감이 커진다. 
+	관찰의 상위요소에 지정. */
+	perspective: 500px;
+	padding: 70px;
+}
+.grand-parent{
+	width: 200px;
+	border: 3px solid lightgray;
+	transition: 1s;
+	transform: rotateX(-45deg);
+	/* transform-style: flat; //기본값이다. style을 따로 지정해두지 않으면 x축 방향으로 -45도만 돌아가지, y축방향으로 돌아가지 않는다. y축 방향으로도 돌아가기 위해서는 style을 preserve-3d로 바꿔야한다.  */
+	transform-style: preserve-3d;
+}
+.parent{
+	width: 200px;
+	border: 3px solid tomato;
+	transition: 1s;
+	transform: rotateY(45deg);
+	transform-style: preserve-3d;
+}
+.img-transform-style{
+	width: 200px;
+	border: 3px solid lightgreen;
+	transition: 1s;
+	transform: rotateX(45deg);
+}
